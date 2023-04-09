@@ -1,0 +1,19 @@
+.chat__header{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px;
+
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+
+  background-color: white;
+
+
+}
+
+.chat__header p{
+  color: var(--text-color);
+  font-size: 12px;
+}

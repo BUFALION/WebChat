@@ -1,0 +1,18 @@
+:root{
+  --recipient-color:#ECEBEB;
+  --text-color:#7A7A7A;
+}
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Abel, sans-serif;
+  font-size: 16px;
+
+  background-color: #F2F2F7;
+
+}

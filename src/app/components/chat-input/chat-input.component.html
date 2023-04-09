@@ -1,0 +1,14 @@
+<div class="input__message">
+  <form (ngSubmit)="sendMessage()">
+    <input
+      [formControl]="messageControl"
+      type="text"
+      placeholder="Send a message">
+    <button type="submit" class="icon__button"
+            [disabled]="messageControl.invalid"
+    ><i class="fa fa-paper-plane-o"></i></button>
+
+  </form>
+
+</div>
+

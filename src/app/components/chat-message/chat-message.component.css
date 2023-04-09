@@ -1,0 +1,39 @@
+.message{
+  display: flex;
+  align-content: center;
+  flex-direction: row-reverse;
+  margin: 16px 32px;
+}
+
+.message--received {
+  flex-direction: row;
+}
+
+.message--received .bubble__message {
+  background-color: var(--recipient-color);
+  border-radius: 10px 10px 10px 0;
+
+}
+
+.message--sent .bubble__message {
+  background-color: white;
+  border-radius: 10px 10px 0 10px;
+}
+
+
+
+.bubble__message{
+  color: black;
+  font-size: 14px;
+  border: 1px solid #ECEBEB;
+
+  padding: 8px 16px;
+  max-width: 40%;
+
+  word-break: break-word;
+
+}
+
+.message__space{
+  flex-grow: 1;
+}
