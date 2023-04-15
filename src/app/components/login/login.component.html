@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="login__container">
+    <form class="form__container"
+          [formGroup]="loginForm"
+          (ngSubmit)="submit()"
+    >
+      <label for="login">Login</label>
+      <input type="text" id="login"
+             formControlName="login"
+      >
+      <p *ngIf="this.loginForm.get('login')?.invalid &&  this.loginForm.get('login')?.touched">
+        <small class="text-danger">Login is required</small></p>
+
+
+      <label for="password">Password</label>
+      <input type="password" id="password"
+             formControlName="password"
+      >
+      <p *ngIf="this.loginForm.get('password')?.invalid &&  this.loginForm.get('password')?.touched">
+        <small class="text-danger">Password is required (min. length = 8)</small></p>
+
+      <button [disabled]="loginForm.invalid" type="submit">Login</button>
+    </form>
+
+  </div>
+</div>

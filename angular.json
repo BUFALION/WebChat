@@ -91,6 +91,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "chat:build:production",
+            "firebaseProject": "deft-melody-382719",
+            "firebaseHostingSite": "deft-melody-382719"
+          }
         }
       }
     }

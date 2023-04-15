@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "deft-melody-382719": {
+      "hosting": {
+        "chat": [
+          "deft-melody-382719"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "deft-melody-382719"
+  }
+}
