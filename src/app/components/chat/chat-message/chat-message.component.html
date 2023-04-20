@@ -1,7 +1,18 @@
-<div class=" message message--sent">
-  <div class="bubble__message">
-      <p>{{message.text}}</p>
+
+<div class=" message">
+  <div class="bubble__message"
+       (contextmenu)="openMsgMenu($event,message)"
+  >
+      <p contenteditable="false">{{message.text}}</p>
   </div>
   <div class="message__space"></div>
 </div>
 
+<div style="visibility: hidden; position: fixed;"
+     [style.left]="menuTopLeftPosition.x"
+     [style.top]="menuTopLeftPosition.y"
+     [matMenuTriggerFor]="rightMenu"></div>
+<mat-menu #rightMenu="matMenu">
+  <button mat-menu-item (click)="this.editMessage.emit(message)">Изменить</button>
+  <button mat-menu-item (click)="deleteMessage()">Удалить</button>
+</mat-menu>

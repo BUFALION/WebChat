@@ -1,1 +1,27 @@
+<div class="container">
+  <app-chat-header></app-chat-header>
+  <div class="messages__container">
+<!--    почему c ng-container  мерцаний нету -->
+    <ng-container *ngIf="user$ | async as user">
+      <app-chat-message
+        *ngFor="let message of messages$ | async"
+        [ngClass]="user.uid === message.senderId ? 'message--sent' : 'message--received'"
+        [message]="message"
+        [isReceived]="user.uid!==message.senderId"
+        (editMessage)="editMessage=true"
+      ></app-chat-message>
+    </ng-container>
+  </div>
+<!--  <ng-container *ngIf="editMessage;then edit"></ng-container>-->
+<!--  <ng-template #edit>-->
+<!--  </ng-template>-->
+  <app-chat-input
+
+  ></app-chat-input>
+
+
+</div>
+
+
+
 

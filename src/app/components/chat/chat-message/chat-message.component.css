@@ -5,22 +5,19 @@
   margin: 16px 32px;
 }
 
-.message--received {
+:host-context(.message--received) .message {
   flex-direction: row;
 }
 
-.message--received .bubble__message {
+:host-context(.message--received) .bubble__message {
   background-color: var(--recipient-color);
   border-radius: 10px 10px 10px 0;
-
 }
 
-.message--sent .bubble__message {
+:host-context(.message--sent) .bubble__message {
   background-color: white;
   border-radius: 10px 10px 0 10px;
 }
-
-
 
 .bubble__message{
   color: black;

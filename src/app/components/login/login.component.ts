@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {AuthenticationService} from "../../services/authentication.service";
-
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,8 @@ import {AuthenticationService} from "../../services/authentication.service";
 export class LoginComponent implements OnInit{
   loginForm! : FormGroup;
 
-  constructor(private authService:AuthenticationService
+  constructor(private authService:AuthenticationService,
+              private router: Router
   ) {
   }
 
@@ -33,9 +34,9 @@ export class LoginComponent implements OnInit{
       const {login,password}=this.loginForm.value;
       console.log()
       this.authService.login(login,password)
-        .subscribe(
-          ()=> alert("yep")
-          )
+        .subscribe({
+          next:()=> this.router.navigate(['chat'])
+        });
 
     }
 }

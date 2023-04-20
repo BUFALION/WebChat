@@ -1,0 +1,24 @@
+.container{
+  max-width: 656px;
+  max-height: 960px;
+
+  height: 100vh;
+  width: 100%;
+
+  margin: 0 auto;
+
+  background-color: white;
+
+  display: flex;
+  flex-direction: column;
+}
+.container app-chat-input{
+  margin-top: auto;
+}
+.messages__container{
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+

@@ -14,7 +14,12 @@ import { LoginComponent } from './components/login/login.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import {RouterOutlet} from "@angular/router";
 import {AppRoutingModule} from "./app-routing.module";
-import {Auth, provideAuth,getAuth} from "@angular/fire/auth";
+import { provideAuth,getAuth} from "@angular/fire/auth";
+import {ChatComponent} from "./components/chat/chat.component";
+import { DateShowPipe } from './pipes/date-show.pipe';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatMenuModule} from "@angular/material/menu";
+
 
 @NgModule({
   declarations: [
@@ -24,22 +29,30 @@ import {Auth, provideAuth,getAuth} from "@angular/fire/auth";
     ChatMessageComponent,
     LoginComponent,
     SignUpComponent,
-  ],
-  imports: [
-    BrowserModule,
-    NgOptimizedImage,
-    FormsModule,
-    ReactiveFormsModule,
-    provideFirebaseApp(() => initializeApp(environment.firebase)),
-    provideFirestore(() => getFirestore()),
-    provideAuth(() => getAuth()),
-    RouterOutlet,
-    AppRoutingModule,
-
-
+    ChatComponent,
+    DateShowPipe
 
   ],
+    imports: [
+        BrowserModule,
+        NgOptimizedImage,
+        FormsModule,
+        ReactiveFormsModule,
+        provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(() => getFirestore()),
+        provideAuth(() => getAuth()),
+        RouterOutlet,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MatMenuModule,
+
+    ],
   providers: [],
+  exports: [
+    ChatMessageComponent,
+    ChatHeaderComponent,
+    ChatInputComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
