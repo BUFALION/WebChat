@@ -1,8 +1,8 @@
 <div class="container">
-
     <app-chat-header></app-chat-header>
     <div class="messages__container">
   <!--    почему c ng-container  мерцаний нету -->
+
       <ng-container *ngIf="user$ | async as user">
         <app-chat-message
           *ngFor="let message of messages$ | async"
@@ -12,6 +12,7 @@
           (onEditMessage)="editMessage=$event"
         ></app-chat-message>
       </ng-container>
+      <div #endOfChat></div>
     </div>
 
     <app-chat-input

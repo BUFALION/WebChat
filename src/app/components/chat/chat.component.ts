@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {Observable, tap} from "rxjs";
 import {IMessage} from "../../models/chat";
 import {ChatService} from "../../services/chat.service";
@@ -11,6 +11,9 @@ import {AuthenticationService} from "../../services/authentication.service";
 })
 
 export class ChatComponent implements OnInit{
+  @ViewChild('endOfChat')
+  endOfChat!: ElementRef;
+
   messages$!: Observable<IMessage[]>;
   user$=this.authService.currentUser$;
 
@@ -27,8 +30,16 @@ export class ChatComponent implements OnInit{
     this.chatService.currentChat$.subscribe(()=> {
         this.messages$ = this.chatService.chatMessages$.pipe(
           tap(() => {
-            //TODO SCROLL
+            this.scrollToBottom()
           }));
       });
+  }
+
+  scrollToBottom(){
+    setTimeout(() => {
+      if (this.endOfChat) {
+        this.endOfChat.nativeElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 100);
   }
 }
