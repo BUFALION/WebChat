@@ -3,8 +3,9 @@
   <div class="bubble__message"
        (contextmenu)="openMsgMenu($event,message)"
   >
-      <p contenteditable="false">{{message.text}}</p>
+      <p contenteditable="false" >{{message.text}}</p>
   </div>
+  <span class="message__time">{{message.sentDate| dateShow}}</span>
   <div class="message__space"></div>
 </div>
 

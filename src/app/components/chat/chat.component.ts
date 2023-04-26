@@ -22,7 +22,7 @@ export class ChatComponent implements OnInit{
   ) {
   }
   ngOnInit(): void {
-    this.chatService.setChat('IHsdQFOZAUVycMW7ozGG')
+    this.chatService.setChat('I9gQ6gfCTBC5qeIIzejL')
 
     this.chatService.currentChat$.subscribe(()=> {
         this.messages$ = this.chatService.chatMessages$.pipe(

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { ChatHeaderComponent } from './components/chat/chat-header/chat-header.component';
 import { ChatInputComponent } from './components/chat/chat-input/chat-input.component';
 import { ChatMessageComponent } from './components/chat/chat-message/chat-message.component';
-import {NgOptimizedImage} from "@angular/common";
+import {DatePipe, NgOptimizedImage} from "@angular/common";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
@@ -20,8 +20,6 @@ import { DateShowPipe } from './pipes/date-show.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from "@angular/material/menu";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ChatRoomsComponent } from './components/chat/chat-rooms/chat-rooms.component';
-
 
 @NgModule({
   declarations: [
@@ -33,7 +31,6 @@ import { ChatRoomsComponent } from './components/chat/chat-rooms/chat-rooms.comp
     SignUpComponent,
     ChatComponent,
     DateShowPipe,
-    ChatRoomsComponent
 
   ],
     imports: [
@@ -51,7 +48,7 @@ import { ChatRoomsComponent } from './components/chat/chat-rooms/chat-rooms.comp
         FontAwesomeModule,
 
     ],
-  providers: [],
+  providers: [DatePipe],
   exports: [
     ChatMessageComponent,
     ChatHeaderComponent,
