@@ -1,9 +1,7 @@
 .input__message{
-
   box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.08);
-  padding: 8px 0;
-}
 
+}
 .input__message form{
   margin-left: 72px;
   display: flex;
@@ -14,8 +12,26 @@
   width: 100%;
   height: 40px;
   border-radius: 20px;
+  margin: 8px 0;
+  padding-left: 5px;
 }
 
+.message__change{
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5px 0;
+}
+
+small{
+  margin-left: 10px;
+}
+
+small fa-icon{
+  padding-right: 5px;
+}
 
 .icon__button{
   cursor: pointer;

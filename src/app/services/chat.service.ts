@@ -7,7 +7,7 @@ import {
   docData,
   Firestore,
   orderBy,
-  query,
+  query, setDoc,
   Timestamp
 } from "@angular/fire/firestore";
 import {concatMap, map, Observable, of, switchMap, take,} from "rxjs";
@@ -65,6 +65,13 @@ export class ChatService {
       }),
       take(1)
     ).subscribe();
+  }
+  setChatMessage(message:IMessage,chatId:string){
+    //TODO ЗАПРЕТИТЬ НАЖИМАТЬ ENTER ДОБАВИТЬ ЗНАСОК РЕДАКТИРОВАНИЯ
+    const ref =doc(this.firestore,'chats',chatId,'messages',message.id)
+    const { id, ...messageWithoutId } = message;
+    setDoc(ref,messageWithoutId);
+
   }
 
 }

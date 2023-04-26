@@ -11,11 +11,11 @@ import {AuthenticationService} from "../../services/authentication.service";
 })
 
 export class ChatComponent implements OnInit{
-
   messages$!: Observable<IMessage[]>;
   user$=this.authService.currentUser$;
 
-  editMessage=false;
+  editMessage!: IMessage
+
   constructor(
     private chatService:ChatService,
     private authService:AuthenticationService

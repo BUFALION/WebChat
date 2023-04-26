@@ -1,12 +1,32 @@
+
 <div class="input__message">
+  <ng-template [ngIf]="editMessageStatus">
+    <div class="message__change">
+      <small><fa-icon [icon]="faPen"></fa-icon>Редактировать</small>
+      <button class="icon__button"
+      (click)="closeEditMessage()"
+      ><fa-icon [icon]="faXmark"></fa-icon></button>
+    </div>
+  </ng-template>
+
   <form (ngSubmit)="sendMessage()">
     <input
       [formControl]="messageControl"
       type="text"
-      placeholder="Send a message">
+      placeholder="Send a message...">
+
+            <!--SEND MESSAGE-->
     <button type="submit" class="icon__button"
             [disabled]="messageControl.invalid"
+            *ngIf="!editMessageStatus else btnedit"
     ><i class="fa fa-paper-plane-o"></i></button>
+            <!--EDIT MESSAGE-->
+    <ng-template #btnedit>
+      <button type="button" class="icon__button"
+              [disabled]="messageControl.value===messageToEdit.text"
+              (click)="editMessage()"
+              ><fa-icon [icon]="faCircleCheck"></fa-icon></button>
+    </ng-template>
 
   </form>
 

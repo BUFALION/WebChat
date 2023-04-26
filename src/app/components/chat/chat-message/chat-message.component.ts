@@ -15,12 +15,11 @@ export class ChatMessageComponent {
   @Input() message!:IMessage;
   @Input() isReceived!:boolean;
 
-  @Output() editMessage=new EventEmitter<IMessage>();
+  @Output() onEditMessage=new EventEmitter<IMessage>();
 
   @ViewChild(MatMenuTrigger, {static: true}) matMenuTrigger!: MatMenuTrigger;
 
   menuTopLeftPosition={x:'0',y:'0'}
-
   constructor(private chatService:ChatService) {
   }
   openMsgMenu(event: MouseEvent,value: IMessage){

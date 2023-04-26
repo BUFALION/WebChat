@@ -13,6 +13,6 @@
      [style.top]="menuTopLeftPosition.y"
      [matMenuTriggerFor]="rightMenu"></div>
 <mat-menu #rightMenu="matMenu">
-  <button mat-menu-item (click)="this.editMessage.emit(message)">Изменить</button>
+  <button mat-menu-item (click)="this.onEditMessage.emit(message)">Изменить</button>
   <button mat-menu-item (click)="deleteMessage()">Удалить</button>
 </mat-menu>

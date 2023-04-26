@@ -19,6 +19,8 @@ import {ChatComponent} from "./components/chat/chat.component";
 import { DateShowPipe } from './pipes/date-show.pipe';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatMenuModule} from "@angular/material/menu";
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ChatRoomsComponent } from './components/chat/chat-rooms/chat-rooms.component';
 
 
 @NgModule({
@@ -30,7 +32,8 @@ import {MatMenuModule} from "@angular/material/menu";
     LoginComponent,
     SignUpComponent,
     ChatComponent,
-    DateShowPipe
+    DateShowPipe,
+    ChatRoomsComponent
 
   ],
     imports: [
@@ -45,6 +48,7 @@ import {MatMenuModule} from "@angular/material/menu";
         AppRoutingModule,
         BrowserAnimationsModule,
         MatMenuModule,
+        FontAwesomeModule,
 
     ],
   providers: [],
